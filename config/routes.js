@@ -19,7 +19,9 @@ module.exports.routes = {
    ***************************************************************************/
 
   "/": { view: "pages/homepage" },
+  "post /login": "UserController.login",
   "post /signup": "UserController.signup",
+  "get /logout": "UserController.logout",
 
   /***************************************************************************
    *                                                                          *

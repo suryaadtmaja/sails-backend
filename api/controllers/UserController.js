@@ -10,9 +10,25 @@ module.exports = {
    * `UserController.login()`
    */
   login: async function (req, res) {
-    return res.json({
-      todo: "login() is not implemented yet!",
+    var userRecord = await User.findOne({
+      email: req.param("email"),
     });
+    if (!userRecord) {
+      return res.forbidden();
+    } else {
+      await sails.helpers.passwords
+        .checkPassword(req.param("password"), userRecord.password)
+        .intercept("incorrect", () => {
+          return new Error("Email or password is incorrect");
+        });
+      var token = jwt.sign({ user: userRecord.id }, sails.config.jwtSecret, {
+        expiresIn: sails.config.jwtExpires,
+      });
+      return res.ok({
+        email: userRecord.email,
+        token: token,
+      });
+    }
   },
 
   /**
@@ -41,30 +57,11 @@ module.exports = {
       var token = jwt.sign({ user: user.id }, sails.config.jwtSecret, {
         expiresIn: sails.config.jwtExpires,
       });
-      return res.ok(token);
+      return res.ok({
+        token: token,
+      });
     } catch (e) {
       return res.negotiate(e);
     }
-    // User.create({
-    //   email: newEmailAddress,
-    //   password: await sails.helpers.passwords.hashPassword(
-    //     req.param("password")
-    //   ),
-    //   fullName: req.param("fullName"),
-    //   tosAcceptedByIp: req.ip,
-    // }).exec((err, user) => {
-    //   if (err) {
-    //     return res.negotiate(err);
-    //   }
-    //   req.login(user, (err) => {
-    //     if (err) {
-    //       return res.negotiate(err);
-    //     }
-    //     var token = jwt.sign({ user: user.id }, sails.config.jwtSecret, {
-    //     expiresIn: sails.config.jwtExpires,
-    //   });
-    //     return res.ok(token);
-    //   });
-    // });
   },
 };
