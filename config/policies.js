@@ -30,22 +30,22 @@ module.exports.policies = {
     login: true,
     signup: true,
   },
-  CategoriesController: {
-    // By default, require requests to come from a logged-in user
-    // (runs the policy in api/policies/isLoggedIn.js)
-    "*": "isLoggedIn",
+  // CategoriesController: {
+  // By default, require requests to come from a logged-in user
+  // (runs the policy in api/policies/isLoggedIn.js)
+  // "*": "isLoggedIn",
 
-    // Only allow admin users to delete other users
-    // (runs the policy in api/policies/isAdmin.js)
-    // delete: "isAdmin",
-  },
-  CoursesController: {
-    // By default, require requests to come from a logged-in user
-    // (runs the policy in api/policies/isLoggedIn.js)
-    "*": "isLoggedIn",
+  // Only allow admin users to delete other users
+  // (runs the policy in api/policies/isAdmin.js)
+  // delete: "isAdmin",
+  // },
+  // CoursesController: {
+  // By default, require requests to come from a logged-in user
+  // (runs the policy in api/policies/isLoggedIn.js)
+  // "*": "isLoggedIn",
 
-    // Only allow admin users to delete other users
-    // (runs the policy in api/policies/isAdmin.js)
-    // delete: "isAdmin",
-  },
+  // Only allow admin users to delete other users
+  // (runs the policy in api/policies/isAdmin.js)
+  // delete: "isAdmin",
+  // },
 };

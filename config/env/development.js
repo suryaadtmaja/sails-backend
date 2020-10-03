@@ -19,6 +19,6 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-  jwtSecret: "mysuperdevsecret",
-  jwtExpires: "1d",
+  jwtSecret: process.env.JWT_SECRET,
+  jwtExpires: `${process.env.JWT_EXPIRES}`,
 };

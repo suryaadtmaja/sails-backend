@@ -12,7 +12,7 @@
  * For more information on configuring datastores, check out:
  * https://sailsjs.com/config/datastores
  */
-
+require("dotenv").config();
 module.exports.datastores = {
   /***************************************************************************
    *                                                                          *
@@ -48,6 +48,6 @@ module.exports.datastores = {
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
     adapter: "sails-postgresql",
-    url: "postgresql://surya:jasad666@localhost:5432/anothertest",
+    url: `${process.env.PG_DB}`,
   },
 };
