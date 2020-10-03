@@ -20,5 +20,5 @@ module.exports = {
   //   connection: 'someMongodbServer'
   // }
   jwtSecret: "mysuperdevsecret",
-  jwtExpires: 5,
+  jwtExpires: "1d",
 };
