@@ -19,6 +19,11 @@ module.exports = {
       description: "Course description",
     },
 
+    youtubeId: {
+      type: "string",
+      maxLength: 50,
+      description: "Youtube Id",
+    },
     url: {
       type: "string",
       maxLength: 100,

@@ -48,6 +48,7 @@ module.exports.bootstrap = async function () {
         "SQL, Models and Migrations - Lecture 4 - CS50's Web Programming with Python and JavaScript 2020",
       description:
         "This course picks up where Harvard University's CS50 leaves off, diving more deeply into the design and implementation of web apps with Python, JavaScript, and SQL using frameworks like Django, React, and Bootstrap. Topics include database design, scalability, security, and user experience. Through hands-on projects	",
+      youtubeId: "YzP164YANAU",
       url:
         "https://www.youtube.com/watch?v=YzP164YANAU&t=5394s&ab_channel=CS50",
       category: 1,
@@ -56,6 +57,7 @@ module.exports.bootstrap = async function () {
       title: "Create Rest Api in minutes with sails",
       description:
         "Here we will create a fully functional REST API using NodeJS and Sails",
+      youtubeId: "WTlSCTiJAXM",
       url:
         "https://www.youtube.com/watch?v=WTlSCTiJAXM&t=183s&ab_channel=TraversyMedia",
       category: 3,

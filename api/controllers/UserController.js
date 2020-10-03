@@ -11,10 +11,12 @@ module.exports = {
    */
   me: async function (req, res) {
     try {
-      return res.ok({
-        email: req.user.email,
-        fullName: req.user.fullName,
-      });
+      if (req.user) {
+        return res.ok({
+          email: req.user.email,
+          fullName: req.user.fullName,
+        });
+      }
     } catch (e) {
       return res.negotiate(e);
     }
