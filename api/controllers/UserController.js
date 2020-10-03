@@ -9,17 +9,31 @@ module.exports = {
   /**
    * `UserController.login()`
    */
+  me: async function (req, res) {
+    try {
+      return res.ok({
+        email: req.user.email,
+        fullName: req.user.fullName,
+      });
+    } catch (e) {
+      return res.negotiate(e);
+    }
+  },
   login: async function (req, res) {
     var userRecord = await User.findOne({
       email: req.param("email"),
     });
     if (!userRecord) {
-      return res.forbidden();
+      return res.status(422).send({
+        messages: "Email or password is incorrect",
+      });
     } else {
       await sails.helpers.passwords
         .checkPassword(req.param("password"), userRecord.password)
         .intercept("incorrect", () => {
-          return new Error("Email or password is incorrect");
+          return res.status(422).send({
+            messages: "Email or password is incorrect",
+          });
         });
       var token = jwt.sign({ user: userRecord.id }, sails.config.jwtSecret, {
         expiresIn: sails.config.jwtExpires,
@@ -58,6 +72,8 @@ module.exports = {
         expiresIn: sails.config.jwtExpires,
       });
       return res.ok({
+        email: user.email,
+        messages: "account successfully created",
         token: token,
       });
     } catch (e) {

@@ -22,6 +22,7 @@ module.exports.routes = {
   "post /login": "UserController.login",
   "post /signup": "UserController.signup",
   "get /logout": "UserController.logout",
+  "get /profile": "UserController.me",
 
   /***************************************************************************
    *                                                                          *

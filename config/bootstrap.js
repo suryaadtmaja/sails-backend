@@ -1,3 +1,4 @@
+const Categories = require("../api/models/Categories");
 /**
  * Seed Function
  * (sails.config.bootstrap)
@@ -9,8 +10,9 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function() {
+const Courses = require("../api/models/Courses");
 
+module.exports.bootstrap = async function () {
   // By convention, this is a good place to set up fake data during development.
   //
   // For example:
@@ -26,5 +28,37 @@ module.exports.bootstrap = async function() {
   //   // etc.
   // ]);
   // ```
-
+  await sails.models.categories.createEach([
+    {
+      categories: "backend",
+    },
+    {
+      categories: "frontend",
+    },
+    {
+      categories: "css",
+    },
+    {
+      categories: "computer science",
+    },
+  ]);
+  await sails.models.courses.createEach([
+    {
+      title:
+        "SQL, Models and Migrations - Lecture 4 - CS50's Web Programming with Python and JavaScript 2020",
+      description:
+        "This course picks up where Harvard University's CS50 leaves off, diving more deeply into the design and implementation of web apps with Python, JavaScript, and SQL using frameworks like Django, React, and Bootstrap. Topics include database design, scalability, security, and user experience. Through hands-on projects	",
+      url:
+        "https://www.youtube.com/watch?v=YzP164YANAU&t=5394s&ab_channel=CS50",
+      category: 1,
+    },
+    {
+      title: "Create Rest Api in minutes with sails",
+      description:
+        "Here we will create a fully functional REST API using NodeJS and Sails",
+      url:
+        "https://www.youtube.com/watch?v=WTlSCTiJAXM&t=183s&ab_channel=TraversyMedia",
+      category: 3,
+    },
+  ]);
 };
