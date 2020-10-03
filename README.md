@@ -1,26 +1,43 @@
-# mymovielist
+# Web Courses API Using SailsJS
 
-a [Sails v1](https://sailsjs.com) application
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
+This tutorial allow you to create Web Courses API using SailsJs (API only), there's a lot of a things to improve, but this repo is provide all necessary to build an API using Sails Js, this Api include
+
+  - Authentication (login & signup) using JWT
+  - Post, edit, delete courses and category
+  
+
+### Todos
+
+ - Write Tests
+ - Adding Logout function
+
+# Basic Information
+
+  - Using new version of Sails
+
+### Installation
+
+```sh
+$ npm install sails -g
+$ cd sails-backend
+$ npm install
+$ sails lift
+```
+
+### Migration Strategy
+
+This app is currently using migrate: 'drop' to make it easy for development, you can change it later in config/models.js
 
 
-### Links
+### Development
 
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
-
-
-### Version info
-
-This app was originally generated on Fri Oct 02 2020 07:55:44 GMT+0700 (Western Indonesia Time) using Sails v1.3.1.
-
-<!-- Internally, Sails used [`sails-generate@2.0.0`](https://github.com/balderdashy/sails-generate/tree/v2.0.0/lib/core-generators/new). -->
+Pull request is accepted
 
 
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
+License
+----
 
+MIT
