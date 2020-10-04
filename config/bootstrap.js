@@ -54,6 +54,37 @@ module.exports.bootstrap = async function () {
       category: 1,
     },
     {
+      title: "Vue Js Basic",
+      description: "Frontend basic using Vue JS",
+      youtubeId: "Wy9q22isx3U",
+      url: "https://www.youtube.com/watch?v=Wy9q22isx3U",
+      category: 2,
+    },
+    {
+      title: "Ruby Programming",
+      description:
+        "Giraffe Academy is rebranding! I've decided to re-focus the brand of this channel to highlight myself as a developer and teacher!",
+      youtubeId: "8wZ2ZD--VTk",
+      url: "https://www.youtube.com/watch?v=8wZ2ZD--VTk",
+      category: 5,
+    },
+    {
+      title: "Ruby On Rails in 60 Minutes",
+      description:
+        "In this video we will cover all of the fundamentals of the Ruby on Rails framework by building a blog application with comment functionality",
+      youtubeId: "pPy0GQJLZUM",
+      url: "https://www.youtube.com/watch?v=pPy0GQJLZUM",
+      category: 5,
+    },
+    {
+      title: "What exactly is an algorithm? Algorithms explained | BBC Ideas",
+      description:
+        "What is an algorithm? You may be familiar with the idea in the context of Instagram, YouTube or Facebook, but it can feel like a big, abstract concept. Here’s presenter Jon Stroud with a step-by-step guide to what algorithms actually are, what algorithms do, and how algorithms work.",
+      youtubeId: "ZnBF2GeAKbo",
+      url: "https://www.youtube.com/watch?v=ZnBF2GeAKbo",
+      category: 4,
+    },
+    {
       title: "Create Rest Api in minutes with sails",
       description:
         "Here we will create a fully functional REST API using NodeJS and Sails",
